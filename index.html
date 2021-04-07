@@ -1,1 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Neural RGB-D Surface Reconstruction - Surface reconstruction from color and depth images using a multi-layer perceptron.">
+  <meta name="keywords" content="neural, rgbd, rgb-d, surface, geometry, reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neural RGB-D Surface Reconstruction</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/comp-slider.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="http://niessnerlab.org">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="http://niessnerlab.org/projects/azinovic2019inverse.html">
+            Inverse Path Tracing
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Neural RGB-D Surface Reconstruction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="http://niessnerlab.org/members/dejan_azinovic/profile.html">Dejan Azinović</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://niessnerlab.org/members/matthias_niessner/profile.html">Matthias Nießner</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://justusthies.github.io/">Justus Thies</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Technical University of Munich,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#" disabled
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <video id="teaser" muted loop height="100%">
+          <source src="static/videos/teaser.mp4"
+                  type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Our method obtains a high-quality 3D reconstruction from an RGB-D input sequence by training a multi-layer perceptron.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve"  controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp"  controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba"  controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody"  controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt"  controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask"  controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee"  controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby"  controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we explore how to leverage the success of implicit novel view synthesis methods for surface reconstruction.
+            Methods which learn a neural radiance field have shown amazing image synthesis results, but the underlying geometry representation is only a coarse approximation of the real geometry.
+            We demonstrate how depth measurements can be incorporated into the radiance field formulation to produce more detailed and complete reconstruction results than using methods based on either color or depth data alone.
+            In contrast to a density field as the underlying geometry representation, we propose to learn a deep neural network which stores a truncated signed distance field.
+            Using this representation, we show that one can still leverage differentiable volume rendering to estimate color values of the observed images during training to compute a reconstruction loss.
+            This is beneficial for learning the signed distance field in regions with missing depth measurements.
+            Furthermore, we correct for misalignment errors of the camera, improving the overall reconstruction quality.
+            In several experiments, we show-cast our method and compare to existing works on classical RGB-D fusion and learned representations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Abstract. -->
+
+  <!-- Paper video. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-6">
+      <h2 class="title is-2">Video</h2>
+      <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <!--/ Paper video. -->
+</section>
+
+<section class="section">
+  <div class="container">
+    <h3 class="title is-2">Results</h3>
+    <div class="columns is-centered">
+      <div class="comparison">
+        <div class="img background-img"></div>
+        <div class="img foreground-img"></div>
+        <input type="range" min="0" max="1279" value="639" class="slider-line" name='s50slider' id="s50slider">
+        <div class='slider-button'></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2">Animation</h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Interpolating states</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-2 has-text-centered">
+            <img src="https://homes.cs.washington.edu/~kpar/nerfies/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-2 has-text-centered">
+            <img src="https://homes.cs.washington.edu/~kpar/nerfies/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">D-NeRF</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 width="75%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2020nerfies
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Deformable Neural Radiance Fields},
+  journal   = {arXiv preprint arXiv:2011.12948},
+  year      = {2020},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website, we just ask that you link back to the <a href="https://nerfies.github.io/">original page</a> in the footer.
+            Please remember to remove the analytics code included in the header of the website which you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

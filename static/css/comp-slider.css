@@ -1,0 +1,81 @@
+.comparison {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    border: 2px solid rgb(255, 255, 255);
+    }
+    .comparison .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 1280px 100%;
+    }
+    .comparison .background-img {
+    background-image: url("../images/scene0050_bf.png");
+    }
+    .comparison .foreground-img {
+    background-image: url("../images/scene0050_ours.png");
+    width: 50%;
+    }
+    .comparison .slider-line {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(242, 242, 242, 0.1);
+    outline: none;
+    margin: 0;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .comparison .slider-line:hover {
+    background: rgba(242, 242, 242, 0.0);
+    }
+    .comparison .slider-line::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 720px;
+    background: white;
+    cursor: pointer;
+    }
+    .comparison .slider-line::-moz-range-thumb {
+    width: 6px;
+    height: 720px;
+    background: white;
+    cursor: pointer;
+    }
+    .comparison .slider-button {
+    pointer-events: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .comparison .slider-button:after {
+    content: "";
+    padding: 3px;
+    display: inline-block;
+    border: solid #5D5D5D;
+    border-width: 0 2px 2px 0;
+    transform: rotate(-45deg);
+    }
+    .comparison .slider-button:before {
+    content: "";
+    padding: 3px;
+    display: inline-block;
+    border: solid #5D5D5D;
+    border-width: 0 2px 2px 0;
+    transform: rotate(135deg);
+    }

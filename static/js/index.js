@@ -77,10 +77,10 @@ $(document).ready(function() {
 
     $("#s50slider").on("input change", (e)=>{
       const sliderPos = e.target.value * 100 / e.target.max;
-      console.log(e.target.max)
       // Update the width of the foreground image
       $('.foreground-img').css('width', `${sliderPos}%`)
       // Update the position of the slider button
       $('.slider-button').css('left', `calc(${sliderPos}% - 15px)`)
     });
+
 })

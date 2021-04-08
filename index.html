@@ -10,10 +10,9 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/comp-slider.css">
+  <link rel="stylesheet" href="./static/css/juxtapose.css">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
@@ -21,7 +20,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
 <body>
@@ -69,7 +67,7 @@
               <a href="http://niessnerlab.org/members/dejan_azinovic/profile.html">Dejan Azinović</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
@@ -78,7 +76,7 @@
               <a href="http://niessnerlab.org/members/matthias_niessner/profile.html">Matthias Nießner</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://justusthies.github.io/">Justus Thies</a><sup>1</sup>,
+              <a href="https://justusthies.github.io/">Justus Thies</a><sup>1</sup>
             </span>
           </div>
 
@@ -138,10 +136,9 @@
 </section>
 
 <section class="hero teaser">
-  <div class="hero-body">
     <div class="columns is-centered">
       <div class="column is-6">
-        <video id="teaser" muted loop height="100%">
+        <video id="teaser" autoplay muted loop height="100%">
           <source src="static/videos/teaser.mp4"
                   type="video/mp4">
         </video>
@@ -150,67 +147,7 @@
         </h2>
       </div>
     </div>
-  </div>
 </section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve"  controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp"  controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba"  controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody"  controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt"  controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask"  controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee"  controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby"  controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <section class="section">
   <div class="container">
@@ -235,13 +172,15 @@
     </div>
   </div>
   <!--/ Abstract. -->
+</section>
 
+<section>
   <!-- Paper video. -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-6">
       <h2 class="title is-2">Video</h2>
       <div class="publication-video">
-        <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+        <iframe src="https://www.youtube.com/embed/nC_t0t9u6ws?rel=0&amp;showinfo=0"
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
@@ -251,84 +190,31 @@
 
 <section class="section">
   <div class="container">
-    <h3 class="title is-2">Results</h3>
-    <div class="columns is-centered">
-      <div class="comparison">
-        <div class="img background-img"></div>
-        <div class="img foreground-img"></div>
-        <input type="range" min="0" max="1279" value="639" class="slider-line" name='s50slider' id="s50slider">
-        <div class='slider-button'></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container">
-
-    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-2">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <h3 class="title is-2">Results</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            We test our method on the <a href="http://www.scan-net.org/">ScanNet</a> dataset which provides RGB-D sequences of room-scale scenes.
+            We compare our method to the original ScanNet <a href="http://graphics.stanford.edu/projects/bundlefusion/">BundleFusion</a> reconstructions which often suffer from severe camera pose misalignment.
+            Our approach jointly optimizes for the scene representation network as well as the camera poses, leading to substantially reduced misalignment artifacts in the reconstructed geometry.
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-2 has-text-centered">
-            <img src="https://homes.cs.washington.edu/~kpar/nerfies/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+        <div class="columns is-centered">
+          <div class="column is-three-quarters">
+            <div class="content juxtapose">
+              <img src="static/images/scene0002_bf.png" data-label="BundleFusion [Dai et al. 2017]" />
+              <img src="static/images/scene0002_ours.png" data-label="Ours" />
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-2 has-text-centered">
-            <img src="https://homes.cs.washington.edu/~kpar/nerfies/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+            <div class="content juxtapose">
+              <img src="static/images/scene0050_bf.png" data-label="BundleFusion [Dai et al. 2017]" />
+              <img src="static/images/scene0050_ours.png" data-label="Ours" />
+            </div>
+            <script src="./static/js/juxtapose.min.js"></script>
           </div>
         </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">D-NeRF</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 width="75%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
       </div>
     </div>
-    <!--/ Animation. -->
   </div>
 </section>
 
@@ -336,11 +222,11 @@
 <section class="section" id="BibTeX">
   <div class="container content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2020nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Deformable Neural Radiance Fields},
-  journal   = {arXiv preprint arXiv:2011.12948},
-  year      = {2020},
+    <pre><code>@article{short_title
+  author    = {authors},
+  title     = {Neural RGB-D Surface Reconstruction},
+  journal   = {arXiv preprint arXiv:},
+  year      = {2021},
 }</code></pre>
   </div>
 </section>
@@ -349,10 +235,10 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link" href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+      <a class="icon-link" href="#">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="#" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -365,6 +251,9 @@
           <p>
             This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website, we just ask that you link back to the <a href="https://nerfies.github.io/">original page</a> in the footer.
             Please remember to remove the analytics code included in the header of the website which you do not want on your website.
+          </p>
+          <p>
+            The comparison slider was implemented with <a href="https://juxtapose.knightlab.com/">Juxtapose</a>, which is licensed under <a href="https://raw.githubusercontent.com/NUKnightLab/juxtapose/master/LICENSE">Mozilla Public License Version 2.0</a>.
           </p>
         </div>
       </div>

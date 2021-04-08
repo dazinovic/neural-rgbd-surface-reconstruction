@@ -76,6 +76,7 @@ body {
 
 .author-block {
   display: inline-block;
+  margin: 6px;
 }
 
 .publication-banner img {

@@ -1,0 +1,40 @@
+expname = staircase
+basedir = ./logs
+datadir = ./data/staircase
+dataset_type = scannet
+trainskip = 1
+
+N_iters = 400000
+N_rand = 900
+N_samples = 512
+N_importance = 16
+chunk = 4096  # 1024 * 16
+frame_features = 0
+optimize_poses = True
+use_deformation_field = False
+share_coarse_fine = True
+multires = 8
+
+rgb_weight = 0.1
+depth_weight = 0.0
+fs_weight = 10.0
+trunc_weight = 6000.0
+trunc = 0.05
+
+rgb_loss_type = l2
+sdf_loss_type = l2
+
+mode = sdf
+use_viewdirs = True
+raw_noise_std = 0.0
+
+translation = [0.0, -2.42, 0.0]
+sc_factor = 0.25
+near = 0.0
+far = 2.0
+
+factor = 1
+render_factor = 1
+
+i_img = 5000
+i_mesh = 200000

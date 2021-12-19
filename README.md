@@ -7,7 +7,7 @@
 > Arxiv Pre-print
 
 <p align="center">
-  <img width="100%" src="docs/teaser.jpg"/>
+  <img width="100%" src="docs/static/images/teaser.jpg"/>
 </p>
 
 This repository contains the code for the paper Neural RGB-D Surface Reconstruction, a novel approach for 3D reconstruction that combines implicit surface representations with neural radiance fields.

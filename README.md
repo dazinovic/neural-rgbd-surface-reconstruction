@@ -73,6 +73,24 @@ The files `poses.txt` and `trainval_poses.txt` contain the camera matrices in th
 
 You can also write your own dataloader. You can use the existing `load_scannet.py` as template and update `load_dataset.py`.
 
+### Dataset
+
+The dataset used in the paper is available via the following link: [neural_rgbd_data.zip](http://kaldir.vc.in.tum.de/neural_rgbd/neural_rgbd_data.zip) (7.25 GB). The ICL data is not included here, but can be downloaded from the original author's [webpage](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html).
+
+The scene files have been provided by various artists for free on BlendSwap. Please refer to the table below for license information and links to the .blend files.
+
+| License       | Scene name                                             |
+| ------------- | ------------------------------------------------------ |
+| CC-BY         | [Breakfast room](https://blendswap.com/blend/13363)    |
+| CC-0          | [Complete kitchen](https://blendswap.com/blend/11801)  |
+| CC-BY         | [Green room](https://blendswap.com/blend/8381)         |
+| CC-BY         | [Grey-white room](https://blendswap.com/blend/13552)   |
+| CC-BY         | [Kitchen](https://blendswap.com/blend/5156)            |
+| CC-0          | [Morning apartment](https://blendswap.com/blend/10350) |
+| CC-BY         | [Staircase](https://blendswap.com/blend/14449)         |
+| CC-BY         | [Thin geometry](https://blendswap.com/blend/8381)      |
+| CC-BY         | [Whiteroom](https://blendswap.com/blend/5014)          |
+
 ## Citation
 
 If you use this code in your research, please consider citing:

@@ -4,7 +4,7 @@
 
 > Neural RGB-D Surface Reconstruction <br />
 > [Dejan Azinović](http://niessnerlab.org/members/dejan_azinovic/profile.html), [Ricardo Martin-Brualla](https://ricardomartinbrualla.com/), [Dan B Goldman](https://www.danbgoldman.com/home/), [Matthias Nießner](https://www.niessnerlab.org/members/matthias_niessner/profile.html), [Justus Thies](https://justusthies.github.io/) <br />
-> Arxiv Pre-print
+> CVPR 2022
 
 <p align="center">
   <img width="100%" src="docs/static/images/teaser.jpg"/>
@@ -78,13 +78,12 @@ You can also write your own dataloader. You can use the existing `load_scannet.p
 If you use this code in your research, please consider citing:
 
 ```
-@misc{azinović2021neural,
-      title={Neural RGB-D Surface Reconstruction}, 
-      author={Dejan Azinović and Ricardo Martin-Brualla and Dan B Goldman and Matthias Nießner and Justus Thies},
-      year={2021},
-      eprint={2104.04532},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{azinovic2022neural,
+    title     = {Neural RGB-D Surface Reconstruction}, 
+    author    = {Dejan Azinovi{\'c} and Ricardo Martin-Brualla and Dan B Goldman and Matthias Nie{\ss}ner and Justus Thies},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022}
 }
 ```
 

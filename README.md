@@ -75,7 +75,7 @@ You can also write your own dataloader. You can use the existing `load_scannet.p
 
 ### Dataset
 
-The dataset used in the paper is available via the following link: [neural_rgbd_data.zip](http://kaldir.vc.in.tum.de/neural_rgbd/neural_rgbd_data.zip) (7.25 GB). The ICL data is not included here, but can be downloaded from the original author's [webpage](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html).
+The dataset used in the paper is available via the following link: <a href="http://kaldir.vc.in.tum.de/neural_rgbd/neural_rgbd_data.zip" target="_blank" rel="noopener">neural_rgbd_data.zip</a> (7.25 GB). The ICL data is not included here, but can be downloaded from the original author's [webpage](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html).
 
 The scene files have been provided by various artists for free on BlendSwap. Please refer to the table below for license information and links to the .blend files.
 

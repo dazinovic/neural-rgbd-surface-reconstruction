@@ -91,7 +91,7 @@ The scene files have been provided by various artists for free on BlendSwap. Ple
 | CC-BY         | [Thin geometry](https://blendswap.com/blend/8381)      |
 | CC-BY         | [Whiteroom](https://blendswap.com/blend/5014)          |
 
-We also provide culled ground truth meshes for evaluation purposes: <a href="http://kaldir.vc.in.tum.de/neural_rgbd/ground_truth_meshes.zip" target="_blank" rel="noopener">ground_truth_meshes.zip</a> (273 MB).
+We also provide culled ground truth meshes and our method's meshes for evaluation purposes: <a href="http://kaldir.vc.in.tum.de/neural_rgbd/meshes.zip" target="_blank" rel="noopener">meshes.zip</a> (514 MB).
 
 ## Citation
 

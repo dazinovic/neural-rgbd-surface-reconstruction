@@ -98,12 +98,13 @@ We also provide culled ground truth meshes and our method's meshes for evaluatio
 If you use this code in your research, please consider citing:
 
 ```
-@inproceedings{azinovic2022neural,
-    title     = {Neural RGB-D Surface Reconstruction}, 
-    author    = {Dejan Azinovi{\'c} and Ricardo Martin-Brualla and Dan B Goldman and Matthias Nie{\ss}ner and Justus Thies},
+@InProceedings{Azinovic_2022_CVPR,
+    author    = {Azinovi\'c, Dejan and Martin-Brualla, Ricardo and Goldman, Dan B and Nie{\ss}ner, Matthias and Thies, Justus},
+    title     = {Neural RGB-D Surface Reconstruction},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
     month     = {June},
-    year      = {2022}
+    year      = {2022},
+    pages     = {6290-6301}
 }
 ```
 

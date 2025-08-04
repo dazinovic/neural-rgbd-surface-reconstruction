@@ -75,7 +75,7 @@ You can also write your own dataloader. You can use the existing `load_scannet.p
 
 ### Dataset
 
-The dataset used in the paper is available via the following link: <a href="http://kaldir.vc.in.tum.de/neural_rgbd/neural_rgbd_data.zip" target="_blank" rel="noopener">neural_rgbd_data.zip</a> (7.25 GB). The ICL data is not included here, but can be downloaded from the original author's [webpage](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html).
+The dataset used in the paper is available via the following link: <a href="https://kaldir.vc.in.tum.de/neural_rgbd/neural_rgbd_data.zip" target="_blank" rel="noopener">neural_rgbd_data.zip</a> (7.25 GB). The ICL data is not included here, but can be downloaded from the original author's [webpage](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html).
 
 The scene files have been provided by various artists for free on BlendSwap. Please refer to the table below for license information and links to the .blend files.
 
@@ -91,7 +91,7 @@ The scene files have been provided by various artists for free on BlendSwap. Ple
 | CC-BY         | [Thin geometry](https://blendswap.com/blend/8381)      |
 | CC-BY         | [Whiteroom](https://blendswap.com/blend/5014)          |
 
-We also provide culled ground truth meshes and our method's meshes for evaluation purposes: <a href="http://kaldir.vc.in.tum.de/neural_rgbd/meshes.zip" target="_blank" rel="noopener">meshes.zip</a> (514 MB).
+We also provide culled ground truth meshes and our method's meshes for evaluation purposes: <a href="https://kaldir.vc.in.tum.de/neural_rgbd/meshes.zip" target="_blank" rel="noopener">meshes.zip</a> (514 MB).
 
 ## Citation
 
